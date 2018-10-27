@@ -5,7 +5,8 @@ module.exports = (function () {
     let data = {
       empty: 0,
       redeem: 0,
-      caps: 0
+      caps: 0,
+      total: full
     }
     Array(iter).fill(1).map((e) => {
       if (data.empty - 2 >= 0) {
@@ -23,10 +24,9 @@ module.exports = (function () {
         data.empty += 1
         data.caps += 1
       }
-      console.log(data);
       return e;
     });
-    console.log(full);
+    data.total += data.redeem;
     return data;
   });
 })();
